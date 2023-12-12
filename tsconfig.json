@@ -1,9 +1,12 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "~/*": ["./src/*"]
-        },
+    "baseUrl": "/Users/sukhpreetsingh/apps/srisri/btech_site",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+    "jsx": "preserve"
   }
 }
