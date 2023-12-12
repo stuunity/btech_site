@@ -31,96 +31,36 @@ import NavItem from "~/components/home/NavItem.astro";
       </nav>
     </header>
     <slot />
-    <footer class="bg-orange-400 mt-auto">
-      <div
-        class="flex-col sm:flex-row flex justify-evenly items-center gap-7 p-3"
-      >
+    <footer class="bg-orange-400">
+      <div class="flex-col sm:flex-row flex justify-evenly items-center gap-7 p-3">
         <div class="flex flex-col items-center">
-          <img
-            class="h-[108px] w-[108px] shrink-0 object-cover object-top"
-            src="https://ssuconf1.vercel.app/SSULogo.png"
-            alt="Sri Sri University Logo"
-          />
+          <img class="h-[108px] w-[108px] shrink-0 object-cover object-top" src="https://ssuconf1.vercel.app/SSULogo.png" alt="Sri Sri University Logo" />
           <h3 class="text-black">SRI SRI UNIVERSITY</h3>
         </div>
         <ul class="flex flex-col text-center gap-0.5">
           <li><a class="text-lg">FACULTIES :-</a></li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >SUDHIR SIR</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >R.N.SATPATHI</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >ABCD</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >ABCD</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >SEE ALL-></a
-            >
-          </li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">SUDHIR SIR</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">R.N.SATPATHI</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">ABCD</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">ABCD</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">SEE ALL-></a></li>
         </ul>
         <ul class="flex flex-col text-center gap-0.5">
           <li><a class="text-lg">CATEGORIES :-</a></li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >LINKS</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >EVENTS</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >GALLERY</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >CURRICULUM</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-slate-700 font-semibold"
-              >COLLABORATIONS</a
-            >
-          </li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">LINKS</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">EVENTS</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">GALLERY</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">CURRICULUM</a></li>
+          <li><a class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold">COLLABORATIONS</a></li>
         </ul>
       </div>
-      <div
-        class="flex flex-col items-center gap-2 my-5 sm:flex-row sm:justify-center"
-      >
-        <h3>CONTACT US AT:</h3>
-        <a href="">fet@srisriuniversity.edu.in</a>
+      <div class="text-lg flex flex-col items-center gap-2 my-5 sm:flex-row sm:justify-center">
+        <h4>CONTACT US AT: </h4>
+        <a href="" class="text-white font-semibold">fet@srisriuniversity.edu.in</a>
       </div>
-
+    
       <div class="w-screen bg-black h-0.5"></div>
-      <div
-        class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row"
-      >
+      <div class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row">
         <h3 class="text-white px-3">Designed By- FET STUDENTS</h3>
         <ul class="flex gap-4">
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
@@ -128,21 +68,12 @@ import NavItem from "~/components/home/NavItem.astro";
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
         </ul>
-        <div
-          class="flex justify-between gap-x-4 sm:flex-row items-center w-full sm:w-max"
-        >
-          <h3
-            class="text-white px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
-          >
-            TERMS AND CONDITION
-          </h3>
-          <h3
-            class="text-white px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
-          >
-            PRIVACY POLICY
-          </h3>
-        </div>
+        <div class="flex justify-between gap-x-4 sm:flex-row items-center w-full sm:w-max">
+        <h3 class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white">TERMS AND CONDITION</h3>
+        <h3 class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white">PRIVACY POLICY</h3>
+      </div>
       </div>
     </footer>
+    
   </body>
 </html>
