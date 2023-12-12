@@ -9,11 +9,11 @@ const courses = [
   },
   {
     label: "B.tech Computer Science Specialization in Data Science",
-    img: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "https://images.unsplash.com/3/doctype-hi-res.jpg?q=80&w=2665&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     label: "B.tech Computer Science Specialization in Cyber Security",
-    img: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: "https://images.unsplash.com/photo-1620825937374-87fc7d6bddc2?q=80&w=2662&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 ---
@@ -32,13 +32,13 @@ const courses = [
         >
           {
             courses.map((course) => (
-              <li class="relative aspect-video h-auto">
+              <li class="relative">
                 <div class="absolute inset-0 z-0 h-full w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent" />
                 <div
                   style={{
                     "background-image": `url(${course.img});`,
                   }}
-                  class="aspect-square w-full h-auto xs:max-w-[256px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-cover bg-no-repeat p-4 flex flex-col"
+                  class="aspect-square w-full h-full xs:max-w-[256px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-cover bg-no-repeat p-4 flex flex-col"
                 >
                   <h2
                     style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
