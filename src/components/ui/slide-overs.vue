@@ -1,4 +1,9 @@
 <template>
+  <button @click="open = true" class="sm:hidden p-2 rounded-full bg-slate-100">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+    </svg>
+  </button>
   <TransitionRoot as="template" :show="open">
     <Dialog as="div" class="relative z-10" @close="open = false">
       <TransitionChild
@@ -18,16 +23,16 @@
       <div class="fixed inset-0 overflow-hidden">
         <div class="absolute inset-0 overflow-hidden">
           <div
-            class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10"
+            class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10"
           >
             <TransitionChild
               as="template"
               enter="transform transition ease-in-out duration-500 sm:duration-700"
-              enter-from="translate-x-full"
+              enter-from="-translate-x-full"
               enter-to="translate-x-0"
               leave="transform transition ease-in-out duration-500 sm:duration-700"
               leave-from="translate-x-0"
-              leave-to="translate-x-full"
+              leave-to="-translate-x-full"
             >
               <DialogPanel
                 class="pointer-events-auto relative w-screen max-w-md"
@@ -42,7 +47,7 @@
                   leave-to="opacity-0"
                 >
                   <div
-                    class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4"
+                    class="absolute right-0 top-0 -mr-8 flex pl-2 pt-4 sm:-mr-10 sm:pl-4"
                   >
                     <button
                       type="button"
@@ -86,7 +91,7 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import { XMarkIcon } from "@heroicons/vue/24/outline";
+import { XMarkIcon, } from "@heroicons/vue/24/outline";
 
-const open = ref(true);
+const open = ref(false);
 </script>
