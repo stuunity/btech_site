@@ -3,5 +3,9 @@ import Default from "~/layout/default.astro";
 ---
 
 <Default>
-  <main></main>
+  <main class="flex flex-col sm:flex-row gap-8 mx-8 py-10">
+    <div class="h-96 w-10/12 m-auto bg-slate-200 rounded-2xl hidden sm:flex">
+    </div>
+    <div class="h-96 w-10/12 m-auto bg-orange-200 rounded-2xl"></div>
+  </main>
 </Default>
