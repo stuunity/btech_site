@@ -3,9 +3,114 @@ import Default from "~/layout/default.astro";
 ---
 
 <Default>
-  <main class="flex flex-col sm:flex-row gap-8 mx-8 py-10">
-    <div class="h-96 w-10/12 m-auto bg-slate-200 rounded-2xl hidden sm:flex">
+  <main class="flex flex-col gap-y-12">
+    <div class="flex flex-col sm:flex-row gap-8 mx-8 py-10">
+      <div class="h-96 w-10/12 m-auto bg-slate-200 rounded-2xl sm:flex"></div>
+      <div class="h-96 w-10/12 m-auto bg-orange-200 rounded-2xl"></div>
     </div>
-    <div class="h-96 w-10/12 m-auto bg-orange-200 rounded-2xl"></div>
+    <section class="p-4">
+      <h2 class="mb-8 text-4xl font-semibold text-center">Major Courses</h2>
+      <div class="w-full">
+        <ul
+          class="flex w-full flex-wrap justify-around items-stretch gap-4 sm:flex-nowrap"
+        >
+          <li class="relative">
+            <div
+              class="absolute inset-0 z-0 h-full w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="aspect-square h-auto max-w-[240px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-[url('https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat p-4"
+            >
+              <h2
+                style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
+                class="relative z-10 text-xl text-white"
+              >
+                B.tech Computer Science Specialization in <strong
+                  >Artificial Intelligence</strong
+                >
+              </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-6 w-6 text-white absolute right-2 top-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                ></path>
+              </svg>
+            </div>
+          </li>
+          <li class="relative aspect-video h-auto">
+            <div
+              class="absolute inset-0 z-0 h-full w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="aspect-square h-auto max-w-[240px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-[url('https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat p-4"
+            >
+              <h2
+                style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
+                class="relative z-10 text-xl text-white"
+              >
+                B.tech Computer Science Specialization in <strong class=""
+                  >Artificial Intelligence</strong
+                >
+              </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-6 w-6 text-white absolute right-2 top-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                ></path>
+              </svg>
+            </div>
+          </li>
+          <li class="relative aspect-video h-auto">
+            <div
+              class="absolute inset-0 z-0 h-full w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent"
+            >
+            </div>
+            <div
+              class="aspect-square h-auto max-w-[240px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-[url('https://images.unsplash.com/photo-1516110833967-0b5716ca1387?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-no-repeat p-4"
+            >
+              <h2
+                style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
+                class="relative z-10 text-xl text-white"
+              >
+                B.tech Computer Science Specialization in Artificial
+                Intelligence
+              </h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                class="h-6 w-6 text-white absolute right-2 top-2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                ></path>
+              </svg>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 </Default>
