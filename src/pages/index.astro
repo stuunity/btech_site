@@ -19,11 +19,48 @@ const courses = [
 ];
 ---
 
+<script>
+  var cscroll=1;
+  function carouselslider()
+  {
+    const slider=document.getElementById("slider");
+    if(cscroll==3)
+    {
+      slider.scrollLeft-=window.innerWidth;
+      cscroll=1;
+      return;
+    }
+    else
+    {
+      slider.scrollLeft+=window.innerWidth/2;
+      cscroll+=1;
+      return;
+    }
+  }
+  setInterval(carouselslider, 4000);
+  carouselslider();
+</script>
+
 <Default>
   <main class="flex flex-col gap-y-12">
     <div class="flex flex-col sm:flex-row gap-8 mx-8 py-10">
       <div class="h-96 w-10/12 m-auto bg-slate-200 rounded-2xl sm:flex"></div>
-      <div class="h-96 w-10/12 m-auto bg-orange-200 rounded-2xl"></div>
+      <div class="h-96 w-10/12 m-auto">
+        <section class="container">
+          <div class="slider-wrapper max-h-96">
+            <div id="slider" class="slider max-h-96 rounded-2xl">
+              <img class="rounded-2xl" src="https://images.unsplash.com/photo-1657070174397-569b53c68e29?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper" id="slide-1">
+              <img class="rounded-2xl" src="https://images.unsplash.com/photo-1657070174397-569b53c68e29?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper" id="slide-2">
+              <img class="rounded-2xl" src="https://images.unsplash.com/photo-1657070174397-569b53c68e29?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wallpaper" id="slide-3">
+            </div>
+            <div class="slider-nav">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
     <section class="p-4">
       <h2 class="mb-8 text-4xl font-semibold text-center">Major Courses</h2>
