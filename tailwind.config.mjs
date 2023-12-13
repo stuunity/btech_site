@@ -1,22 +1,21 @@
-import * as defaultTheme from "tailwindcss/defaultTheme"
+import * as defaultTheme from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
-  safelist: [ 'delay-300', 'delay-350', 'delay-400', 'delay-450', 'delay-500', 'delay-550',],
+  safelist: [
+    "delay-[300ms]",
+    "delay-[400ms]",
+    "delay-[500ms]",
+    "delay-[600ms]",
+    "delay-[700ms]",
+    "delay-[800ms]",
+  ],
   theme: {
     extend: {
-			screens: {
-				xs: "384px", // => @media (min-width: 384px) { ... }
-				...defaultTheme.screens,
-			},
-      transitionDelay: {
-        '300': '300ms',
-        '350': '400ms',
-        '400': '500ms',
-        '450': '600ms',
-        '500': '700ms',
-        '550': '800ms',
+      screens: {
+        xs: "384px", // => @media (min-width: 384px) { ... }
+        ...defaultTheme.screens,
       },
       colors: {
         layer: {

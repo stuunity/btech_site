@@ -85,7 +85,7 @@
                       >Panel title</DialogTitle
                     >
                   </div> -->
-                  <div class="relative mt-6 flex-1 px-4 sm:px-6">
+                  <div class="relative mt-6 flex-1 px-6 sm:px-6">
                     <ul class="flex flex-col gap-y-6">
                       <template
                         v-for="(navItem, index) in props.navItems"
@@ -93,12 +93,12 @@
                       >
                         <TransitionChild
                           as="template"
-                          :enter="'ease-in-out duration-500 ' +`delay-${300+index*50}`"
-                          enter-from="opacity-0"
-                          enter-to="opacity-100"
+                          :enter="'ease-out duration-300 ' +`delay-[${300+index*100}ms]`"
+                          enter-from="-translate-x-14 opacity-0"
+                          enter-to="translate-x-0 opacity-100"
                           leave="ease-in-out duration-500 delay-100"
-                          leave-from="opacity-100"
-                          leave-to="opacity-0"
+                          leave-from="translate-x-0 opacity-100"
+                          leave-to="-translate-x-14 opacity-0"
                         >
                           <li>
                             <a :href="navItem.path">
