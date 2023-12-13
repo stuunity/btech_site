@@ -1,7 +1,7 @@
 <template>
   <button
     @click="open = true"
-    class="absolute bottom-10 right-10 xs:relative xs:bottom-0 xs:right-0 sm:hidden p-2 rounded-full bg-white border border-slate-500"
+    class="fixed bottom-10 right-10 xs:relative xs:bottom-0 xs:right-0 sm:hidden p-2 rounded-full bg-white border border-slate-500"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
