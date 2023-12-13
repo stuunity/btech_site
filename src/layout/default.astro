@@ -70,17 +70,12 @@ const navItems = [
     </header>
   </body>
   <slot />
-  <footer class="bg-orange-400">
+  <footer class="bg-orange-500">
     <div
       class="flex flex-col sm:flex-row justify-evenly items-center gap-7 p-3 flex-wrap"
     >
       <div class="flex flex-col items-center">
-        <img
-          class="h-[108px] w-[108px] shrink-0 object-cover object-top"
-          src="https://ssuconf1.vercel.app/SSULogo.png"
-          alt="Sri Sri University Logo"
-        />
-        <h3 class="text-black">SRI SRI UNIVERSITY</h3>
+        <Logo />
       </div>
       <ul class="flex flex-col text-center gap-0.5">
         <li><a class="text-lg">FACULTIES :-</a></li>
@@ -157,7 +152,7 @@ const navItems = [
       >
     </div>
 
-    <div class="w-screen bg-black h-0.5"></div>
+    <div class="w-screen bg-slate-800 h-0.5"></div>
     <!-- Quick fix for layout overflow, please handle it! remove flex-wrap class -->
     <!-- Hint: Change font-size spacing -->
     <div

@@ -1,5 +1,6 @@
 <template>
   <button
+    title="Open Menu"
     @click="open = true"
     class="fixed bottom-10 right-10 xs:relative xs:bottom-0 xs:right-0 sm:hidden p-2 rounded-full bg-white border border-slate-500"
   >
@@ -65,6 +66,7 @@
                   >
                     <button
                       type="button"
+                      title="Close Menu"
                       class="relative rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white"
                       @click="open = false"
                     >
@@ -91,7 +93,7 @@
                       >
                         <TransitionChild
                           as="template"
-                          enter="ease-in-out delay-300 duration-500"
+                          :enter="'ease-in-out duration-500 ' +`delay-${300+index*50}`"
                           enter-from="opacity-0"
                           enter-to="opacity-100"
                           leave="ease-in-out duration-500 delay-100"
