@@ -38,5 +38,26 @@ export default {
       // ...
     },
   },
-  plugins: [],
+  plugins: [
+    		function ({ addUtilities }) {
+			addUtilities({
+				".ligatures-none": {
+					fontVariantLigatures: "none",
+				},
+			});
+			addUtilities({
+				".no-scrollbar": {
+					"-ms-overflow-style": "none",
+					/* IE / Edge */
+					"scrollbar-width": "none",
+					/* Firefox */
+				},
+			});
+			addUtilities({
+				".tab-highlight-none": {
+					"-webkit-tap-highlight-color": "transparent",
+				},
+			});
+		},
+  ],
 };
