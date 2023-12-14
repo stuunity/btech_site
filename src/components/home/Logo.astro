@@ -1,11 +1,14 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import logo from "~/assets/logo.png";
 ---
 
-<div class="flex gap-x-1 sm:gap-x-2 shrink-0">
-  <Image
-    class="h-20 w-20 sm:h-24 sm:w-24 lg:h-[108px] lg:w-[108px] shrink-0 object-cover object-top"
+<div class="flex gap-x-1 sm:gap-x-4 shrink-0">
+  <Picture
+    class="w-20 sm:w-24 lg:w-[108px] shrink-0 object-cover object-top"
+    widths={[80, 96, 108, logo.width]}
+    sizes={`(max-width: 640px) 240px, (max-width: 720px) 540px, (max-width: 1024px) 720px, ${logo.width}px`}
+    formats={["webp", "avif"]}
     src={logo}
     alt="SSU Logo"
   />
