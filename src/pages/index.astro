@@ -56,26 +56,26 @@ const courses = [
       <h2 class="mb-8 text-4xl font-semibold text-center">Major Courses</h2>
       <div class="w-full">
         <ul
-          class="flex w-full flex-wrap justify-around items-stretch gap-4 sm:flex-nowrap"
+        class="flex w-full flex-wrap justify-around items-stretch gap-4 sm:flex-nowrap"
         >
-          {
-            courses.map((course) => (
-              <li class="relative">
+        {
+          courses.map((course) => (
+            <li class="relative">
                 <div class="absolute inset-0 z-0 h-full w-full rounded-lg bg-gradient-to-b from-black/20 to-transparent" />
                 <div
                   style={{
                     "background-image": `url(${course.img});`,
                   }}
                   class="aspect-square w-full h-full xs:max-w-[256px] sm:max-w-xs sm:aspect-[16/10] rounded-lg bg-cover bg-no-repeat p-4 flex flex-col"
-                >
-                  <h2
-                    style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
-                    class="relative z-10 text-xl text-white"
                   >
-                    {course.label}
+                  <h2
+                  style="text-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);"
+                  class="relative z-10 text-xl text-white"
+                  >
+                  {course.label}
                   </h2>
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="2"
@@ -87,16 +87,16 @@ const courses = [
                       stroke-linejoin="round"
                       d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                     />
-                  </svg>
-                </div>
-              </li>
-            ))
-          }
+                    </svg>
+                    </div>
+                    </li>
+                    ))
+                  }
         </ul>
       </div>
     </section>
   </main>
+  <Testimonial>
+    
+  </Testimonial>
 </Default>
-<Testimonial>
-  
-</Testimonial>
