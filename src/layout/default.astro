@@ -38,152 +38,220 @@ const navItems = [
     <title>Faculty Of Emerging Technologies</title>
   </head>
   <body class="bg-white min-h-screen w-full flex flex-col items-center">
-    <header
-      class="max-w-screen-xl w-full flex items-center justify-between p-2 sm:p-3 md:p-3.5 lg:p-4"
-    >
+    <header class="max-w-screen-xl w-full flex items-center justify-between p-2 sm:p-3 md:p-3.5 lg:p-4">
       <Logo />
       <nav class="">
-        <SlideOver
-          client:media="(max-width: 640px)"
-          navItems={navItems.flat()}
-        />
-        <ul
-          class="hidden sm:flex justify-center sm:justify-end sm:gap-1 md:gap-2 flex-wrap"
-        >
-          {
-            navItems.map((navItem) =>
-              Array.isArray(navItem) ? (
-                <>
-                  <div class="flex items-center gap-x-2">
-                    {navItem.map(({ label, path }) => (
-                      <NavItem label={label} path={path} />
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <NavItem label={navItem.label} path={navItem.path} />
-              )
-            )
-          }
+        <SlideOver client:media="(max-width: 640px)" navItems={navItems.flat()} />
+        <ul class="hidden sm:flex justify-center sm:justify-end sm:gap-1 md:gap-2 flex-wrap">
+          <!-- component -->
+          <!-- This is an example component -->
+          <div class="max-w-lg mx-auto">
+            <button class="block sm:px-3 sm:py-1 md:px-4 whitespace-nowrap sm:text-base md:text-xl py-2 font-medium border rounded-full border-layer-4 text-layer-12 hover:border-layer-6 hover:bg-orange-400 hover:text-layer-13" type="button" data-dropdown-toggle="dropdown1">Home</button>
+            <!-- Dropdown menu -->
+          </div>
+          <div class="max-w-lg mx-auto">
+            <button class="block sm:px-3 sm:py-1 md:px-4 whitespace-nowrap sm:text-base md:text-xl py-2 font-medium border rounded-full border-layer-4 text-layer-12 hover:border-layer-6 hover:bg-orange-400 hover:text-layer-13" type="button" data-dropdown-toggle="dropdown2">About Us</button>
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown2">
+              
+              <ul class="py-1" aria-labelledby="dropdown2">
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-lg mx-auto">
+            <button class="block sm:px-3 sm:py-1 md:px-4 whitespace-nowrap sm:text-base md:text-xl py-2 font-medium border rounded-full border-layer-4 text-layer-12 hover:border-layer-6 hover:bg-orange-400 hover:text-layer-13" type="button" data-dropdown-toggle="dropdown3">Courses</button>
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown3">
+              
+              <ul class="py-1" aria-labelledby="dropdown3">
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-lg mx-auto">
+            <button class="block sm:px-3 sm:py-1 md:px-4 whitespace-nowrap sm:text-base md:text-xl py-2 font-medium border rounded-full border-layer-4 text-layer-12 hover:border-layer-6 hover:bg-orange-400 hover:text-layer-13" type="button" data-dropdown-toggle="dropdown4">Updates</button>
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown4">
+              
+              <ul class="py-1" aria-labelledby="dropdown4">
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="max-w-lg mx-auto">
+            <button class="block sm:px-3 sm:py-1 md:px-4 whitespace-nowrap sm:text-base md:text-xl py-2 font-medium border rounded-full border-layer-4 text-layer-12 hover:border-layer-6 hover:bg-orange-400 hover:text-layer-13" type="button" data-dropdown-toggle="dropdown5">Contact Us</button>
+            <!-- Dropdown menu -->
+            <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown5">
+              <ul class="py-1" aria-labelledby="dropdown5">
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Dashboard</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Earnings</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Sign out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </ul>
       </nav>
     </header>
-  </body>
-  <slot />
-  <footer class="bg-orange-500">
-    <div
-      class="flex flex-col sm:flex-row justify-evenly items-center gap-7 p-3 flex-wrap"
-    >
-      <div class="flex flex-col items-center gap-y-2">
-        <Logo sm />
-        <h2
-          class="text-white uppercase font-medium text-xs xs:text-sm sm:text-base"
-        >
-          Sri Sri University
-        </h2>
-      </div>
-      <ul class="flex flex-col text-center gap-0.5">
-        <li><a class="text-lg">FACULTIES :-</a></li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >SUDHIR SIR</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >R.N.SATPATHI</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >ABCD</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >ABCD</a
-          >
-        </li>
-        <li>
-          <a
-            href="/faculties/"
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >SEE ALL-></a
-          >
-        </li>
-      </ul>
-      <ul class="flex flex-col text-center gap-0.5">
-        <li><a class="text-lg">CATEGORIES :-</a></li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >LINKS</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >EVENTS</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >GALLERY</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >CURRICULUM</a
-          >
-        </li>
-        <li>
-          <a
-            class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-            >COLLABORATIONS</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div
-      class="text-lg flex flex-col items-center gap-2 my-5 sm:flex-row sm:justify-center"
-    >
-      <h4>CONTACT US AT:</h4>
-      <a href="#" class="text-white font-semibold"
-        >fet@srisriuniversity.edu.in</a
+    <slot />
+    <footer class="bg-orange-500">
+      <div
+        class="flex flex-col sm:flex-row justify-evenly items-center gap-7 p-3 flex-wrap"
       >
-    </div>
-
-    <div class="w-screen bg-slate-800 h-0.5"></div>
-    <!-- Quick fix for layout overflow, please handle it! remove flex-wrap class -->
-    <!-- Hint: Change font-size spacing -->
-    <div
-      class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row flex-wrap"
-    >
-      <h3 class="text-white px-3">Designed By- FET STUDENTS</h3>
-      <ul class="flex gap-4">
-        <li class="w-12 h-12 rounded-full bg-white/20"></li>
-        <li class="w-12 h-12 rounded-full bg-white/20"></li>
-        <li class="w-12 h-12 rounded-full bg-white/20"></li>
-        <li class="w-12 h-12 rounded-full bg-white/20"></li>
-      </ul>
-      <div class="flex justify-between items-center w-full sm:w-max flex-wrap">
-        <h3
-          class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
-        >
-          TERMS AND CONDITION
-        </h3>
-        <h3
-          class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
-        >
-          PRIVACY POLICY
-        </h3>
+        <div class="flex flex-col items-center gap-y-2">
+          <Logo sm />
+          <h2
+            class="text-white uppercase font-medium text-xs xs:text-sm sm:text-base"
+          >
+            Sri Sri University
+          </h2>
+        </div>
+        <ul class="flex flex-col text-center gap-0.5">
+          <li><a class="text-lg">FACULTIES :-</a></li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >SUDHIR SIR</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >R.N.SATPATHI</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >ABCD</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >ABCD</a
+            >
+          </li>
+          <li>
+            <a
+              href="/faculties/"
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >SEE ALL-></a
+            >
+          </li>
+        </ul>
+        <ul class="flex flex-col text-center gap-0.5">
+          <li><a class="text-lg">CATEGORIES :-</a></li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >LINKS</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >EVENTS</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >GALLERY</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >CURRICULUM</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >COLLABORATIONS</a
+            >
+          </li>
+        </ul>
       </div>
-    </div>
-  </footer>
+      <div
+        class="text-lg flex flex-col items-center gap-2 my-5 sm:flex-row sm:justify-center"
+      >
+        <h4>CONTACT US AT:</h4>
+        <a href="#" class="text-white font-semibold"
+          >fet@srisriuniversity.edu.in</a
+        >
+      </div>
+  
+      <div class="w-screen bg-slate-800 h-0.5"></div>
+      <!-- Quick fix for layout overflow, please handle it! remove flex-wrap class -->
+      <!-- Hint: Change font-size spacing -->
+      <div
+        class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row flex-wrap"
+      >
+        <h3 class="text-white px-3">Designed By- FET STUDENTS</h3>
+        <ul class="flex gap-4">
+          <li class="w-12 h-12 rounded-full bg-white/20"></li>
+          <li class="w-12 h-12 rounded-full bg-white/20"></li>
+          <li class="w-12 h-12 rounded-full bg-white/20"></li>
+          <li class="w-12 h-12 rounded-full bg-white/20"></li>
+        </ul>
+        <div class="flex justify-between items-center w-full sm:w-max flex-wrap">
+          <h3
+            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+          >
+            TERMS AND CONDITION
+          </h3>
+          <h3
+            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+          >
+            PRIVACY POLICY
+          </h3>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
 </html>
