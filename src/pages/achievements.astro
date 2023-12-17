@@ -1,0 +1,348 @@
+---
+import "~/style.css";
+import Logo from "~/components/home/Logo.astro";
+import NavItem from "~/components/home/NavItem.astro";
+import Default from "~/layout/default.astro";
+---
+
+<script>
+    function autoplayCarousel() {
+    const carouselEl = document.getElementById("carousel")!;
+    const slideContainerEl = carouselEl.querySelector(
+      "#slide-container"
+    ) as HTMLDivElement;
+    const slideEl = carouselEl.querySelector(".slide") as HTMLDivElement;
+    let slideWidth = slideEl.offsetWidth;
+    // Add click handlers
+    
+    document.querySelectorAll(".slide-indicator").forEach((dot, index) => {
+      dot.addEventListener("click", () => navigate(index));
+      dot.addEventListener("mouseenter", () => clearInterval(autoplay));
+    });
+    // Add keyboard handlers
+    document.addEventListener("keydown", (e) => {
+      if (e.code === "ArrowLeft") {
+        clearInterval(autoplay);
+        navigate("backward");
+      } else if (e.code === "ArrowRight") {
+        clearInterval(autoplay);
+        navigate("forward");
+      }
+    });
+    // Add resize handler
+    window.addEventListener("resize", () => {
+      slideWidth = slideEl.offsetWidth;
+    });
+    // Autoplay
+    const autoplay = setInterval(() => navigate("forward"), 3000);
+    slideContainerEl.addEventListener("mouseenter", () =>
+      clearInterval(autoplay)
+    );
+    // Slide transition
+    const getNewScrollPosition = (arg: number | "forward" | "backward") => {
+      const gap = 10;
+      const maxScrollLeft = slideContainerEl.scrollWidth - slideWidth;
+      if (arg === "forward") {
+        const x = slideContainerEl.scrollLeft + slideWidth + gap;
+        return x <= maxScrollLeft ? x : 0;
+      } else if (arg === "backward") {
+        const x = slideContainerEl.scrollLeft - slideWidth - gap;
+        return x >= 0 ? x : maxScrollLeft;
+      } else if (typeof arg === "number") {
+        const x = arg * (slideWidth + gap);
+        return x;
+      }
+    };
+    const navigate = (arg: number | "forward" | "backward") => {
+      slideContainerEl.scrollLeft = getNewScrollPosition(arg) as number;
+    };
+    // Slide indicators
+    const slideObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const slideIndex = (entry.target as HTMLElement).dataset.slideindex;
+            carouselEl
+              .querySelector(".slide-indicator.active")!
+              .classList.remove("active");
+            const slideIndicators =
+              carouselEl.querySelectorAll(".slide-indicator");
+            // @ts-ignore
+            slideIndicators[slideIndex].classList.add("active");
+          }
+        });
+      },
+      { root: slideContainerEl, threshold: 0.1 }
+    );
+    document.querySelectorAll(".slide").forEach((slide) => {
+      slideObserver.observe(slide);
+    });
+  }
+  autoplayCarousel();
+</script>
+<style>
+    #carousel {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+  }
+  .slide-indicators {
+    display: flex;
+    justify-content: center;
+  }
+  .slide-indicator {
+    height: 44px;
+    width: 36px;
+    display: flex;
+    justify-items: center;
+    cursor: pointer;
+  }
+  .slide-indicator:after {
+    content: "";
+    border-radius: 7px;
+    background-color: #D9D9D9;
+    height: 14px;
+    margin-top: 10px;
+    margin-left: 9px;
+    width: 22px;
+    transition: all ease 250ms;
+  }
+  
+  .slide-indicator:hover:after {
+    background-color: #faa040;
+    margin-left: 4px;
+    width: 28px;
+  }
+  
+  .slide-indicator.active:after
+  {
+    background-color: #fe7525;
+    margin-left: 0px;
+    width: 36px;
+  }
+
+  .slide-banner {
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    padding: 15px;
+    font-size: 2.5vw;
+  }
+  .slide-banner a {
+    color: #fff;
+  }
+  #slide-container {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  .slide {
+    scroll-snap-align: center;
+    position: relative;
+    min-width: 100%;
+    padding-top: 50%;
+  }
+  .slide img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .details{
+    position: relative;
+    top: -130%;
+    left: 60%;
+    height: 230%;
+    width: 40%;
+    background-color: #d9d9d9c1;
+  }
+</style>
+<Default>
+    <main class="flex flex-col gap-y-12 max-w-screen-xl px-4 w-full">
+        <div class="grow flex flex-col w-full mt-8">
+            <div>
+                <div id="carousel" class="">
+                    <div id="slide-container" class="no-scrollbar rounded-2xl w-full grow h-96">
+                      <div class="slide h-[504px]" data-slideindex="0">
+                        <!-- <div class="slide-banner">
+                                  Tour the Empire State Building! <a href="">Buy tickets now.</a>
+                                </div> -->
+                        <!-- TODO: Devsite - remove referrers to web-dev.imgix.net -->
+                        <img
+                          width="1200"
+                          height="600"
+                          src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/d5JiF2JjxniJRH6xviYA.jpg"
+                        />
+                        <div class="details">
+                            <h3>Achiever's Name : </h3>
+                            <h3>Achievement details : </h3>
+                            <h3>Contact details : </h3>
+                        </div>
+                      </div>
+                      <div class="slide h-[504px]" data-slideindex="1">
+                        <!-- <div class="slide-banner">
+                                  Ride the Shinkansen! <a href="">Buy tickets now.</a>
+                                </div> -->
+                        <!-- TODO: Devsite - remove referrers to web-dev.imgix.net -->
+                        <img
+                          width="1200"
+                          height="600"
+                          src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/atRogpxlJTXAvhWe654i.jpg"
+                        />
+                        <div class="details">
+                            <h3>Achiever's Name : </h3>
+                            <h3>Achievement details : </h3>
+                            <h3>Contact details : </h3>
+                        </div>
+                      </div>
+                      <div class="slide h-[504px]" data-slideindex="2">
+                        <!-- <div class="slide-banner">
+                                  Discover relaxation! <a href="">Buy tickets now.</a>
+                                </div> -->
+                        <!-- TODO: Devsite - remove referrers to web-dev.imgix.net -->
+                        <img
+                          width="1200"
+                          height="600"
+                          src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/q8svpF1B6dG5wNuiTgyV.jpg"
+                        />
+                        <div class="details">
+                            <h3>Achiever's Name : </h3>
+                            <h3>Achievement details : </h3>
+                            <h3>Contact details : </h3>
+                        </div>
+                      </div>
+                      <div class="slide h-[504px]" data-slideindex="3">
+                        <!-- <div class="slide-banner">
+                                  See penguins! <a href="">Buy tickets now.</a>
+                                </div> -->
+                        <!-- TODO: Devsite - remove referrers to web-dev.imgix.net -->
+                        <img
+                          width="1200"
+                          height="600"
+                          src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/oweFaoCZ4g8bieZdvG5L.jpg"
+                        />
+                        <div class="details">
+                            <h3>Achiever's Name : </h3>
+                            <h3>Achievement details : </h3>
+                            <h3>Contact details : </h3>
+                        </div>
+                      </div>
+                      <div class="slide h-[504px]" data-slideindex="4">
+                        <!-- <div class="slide-banner">
+                                  Take a ride on the wheel! <a href="">Buy tickets now.</a>
+                                </div> -->
+                        <!-- TODO: Devsite - remove referrers to web-dev.imgix.net -->
+                        <img
+                          width="1200"
+                          height="600"
+                          src="https://web-dev.imgix.net/image/j2RDdG43oidUy6AL6LovThjeX9c2/G0aWgHwWJTPZus9YEMyH.jpg"
+                        />
+                        <div class="details">
+                            <h3>Achiever's Name : </h3>
+                            <h3>Achievement details : </h3>
+                            <h3>Contact details : </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-indicators absolute -bottom-12 w-full">
+                      <div class="slide-indicator"></div>
+                      <div class="slide-indicator"></div>
+                      <div class="slide-indicator active"></div>
+                      <div class="slide-indicator"></div>
+                      <div class="slide-indicator"></div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <br><br><br>
+          <h2>Individual Achievements</h2>
+          <div class="flex max-w-4xl justify-center mx-auto">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <br><br><br>
+          <h2>Group Achievements</h2>
+          <div class="flex max-w-4xl justify-center mx-auto">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Group Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Group Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+              <li class="inline-block h-72 w-48">
+                <div class="flex flex-col items-center gap-2">
+                  <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+                  <p class="font-bold">Group Name :</p>
+                  <p class="font-semibold">Achievement :</p>
+                  <button
+                    class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+                    >Details</button
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <br><br><br>
+    </main>
+</Default>
