@@ -136,7 +136,7 @@ const navItems = [
       </nav>
     </header>
     <slot />
-    <footer class="bg-orange-500">
+    <footer class="bg-orange-400">
       <div
         class="flex flex-col sm:flex-row justify-evenly items-center gap-7 p-3 flex-wrap"
       >
@@ -148,70 +148,148 @@ const navItems = [
             Sri Sri University
           </h2>
         </div>
-        <ul class="flex flex-col text-center gap-0.5">
-          <li><a class="text-lg">FACULTIES :-</a></li>
+        <ul class="flex flex-col text-center gap-1.5">
+          <li><a class="text-lg"> OUR FACULTIES :-</a></li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >SUDHIR SIR</a
+              >> Faculty of Agriculture</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >R.N.SATPATHI</a
+              >> Faculty of Architecture</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >ABCD</a
+              >> Faculty of Arts, Communication and Indic Studies</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >ABCD</a
+              >> Faculty of Contemplative and Behavioural Sciences</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Faculty of Emerging Technologies</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Faculty of Health and Wellness</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Faculty of Management Studies</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Faculty of Sciences</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Faculty of Applied Life Sciences</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Research & Development Cell</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> Sri Sri College of Ayurvedic Science and Research Hospital</a
             >
           </li>
           <li>
             <a
               href="/faculties/"
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >SEE ALL-></a
+              >SEE ALL ></a
             >
           </li>
         </ul>
         <ul class="flex flex-col text-center gap-0.5">
-          <li><a class="text-lg">CATEGORIES :-</a></li>
+          <li><a class="text-lg">QUICK LINKS :-</a></li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >LINKS</a
+              >> UGC Compliance</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >EVENTS</a
+              >> UGC 12-B Status</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >GALLERY</a
+              >> AIU Membership Letter</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >CURRICULUM</a
+              >> NIRF 2023</a
             >
           </li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >COLLABORATIONS</a
+              >> NIRF 2022</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> AICTE Approval</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> ICAR Accreditation</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> IGBC Membership</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> RTI Disclosure</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> ARI IA 2022-23</a
+            >
+          </li>
+          <li>
+            <a
+              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
+              >> IIA Certificate</a
             >
           </li>
         </ul>
@@ -232,22 +310,37 @@ const navItems = [
         class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row flex-wrap"
       >
         <h3 class="text-white px-3">Designed By- FET STUDENTS</h3>
-        <ul class="flex gap-4">
+        <!-- <ul class="flex gap-4">
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
           <li class="w-12 h-12 rounded-full bg-white/20"></li>
-        </ul>
-        <div class="flex justify-between items-center w-full sm:w-max flex-wrap">
+        </ul> -->
+        <div class="flex justify-between items-center w-full sm:w-max flex-wrap gap-3">
           <h3
-            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+            class="text-slate-200 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
           >
-            TERMS AND CONDITION
+          © 2023 Sri Sri University |
           </h3>
           <h3
-            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+            class="text-slate-200 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
           >
-            PRIVACY POLICY
+            <a href="">Disclaimer |</a>
+          </h3>
+          <h3
+            class="text-slate-200 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+          >
+            <a href="">Privacy Policy |</a>
+          </h3>
+          <h3
+            class="text-slate-200 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+          >
+            <a href="">Site Map |</a>
+          </h3>
+          <h3
+            class="text-slate-200 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+          >
+            <a href="">Terms of Use |</a>
           </h3>
         </div>
       </div>
