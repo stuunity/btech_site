@@ -2,6 +2,7 @@
 import "~/style.css";
 import Logo from "~/components/home/Logo.astro";
 import NavItem from "~/components/home/NavItem.astro";
+import Content from "~/pages/contents.astro";
 ---
 
 <!doctype html>
@@ -41,7 +42,7 @@ import NavItem from "~/components/home/NavItem.astro";
         </a>
       </p>
     </div>
-    <div class="flex max-w-4xl justify-center mx-auto">
+    <div class="flex max-w-4xl justify-center mx-auto flex-col items-center">
       <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
         <li class="inline-block h-72 w-48">
           <div class="flex flex-col items-center gap-2">
@@ -132,6 +133,9 @@ import NavItem from "~/components/home/NavItem.astro";
           </div>
         </li>
       </ul>
+      <div id="know more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
+        <button><a href="">READ MORE ></a></button>
+      </div>
     </div>
     <footer class="bg-orange-400">
       <div
