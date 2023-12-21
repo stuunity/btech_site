@@ -2,218 +2,60 @@
 import "~/style.css";
 import Logo from "~/components/home/Logo.astro";
 import NavItem from "~/components/home/NavItem.astro";
+import Content from "~/pages/contents.astro";
+import Default from "~/layout/default.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Faculty Of Emerging Technology</title>
-  </head>
-  <body class="bg-layer-0 min-h-screen w-full flex flex-col items-center">
-    <header
-      class="max-w-screen-xl w-full flex flex-col sm:items-center sm:flex-row items-start justify-between p-2 sm:p-3 md:p-3.5 lg:p-4"
-    >
-      <Logo />
-      <nav class="">
-        <ul
-          class="hidden sm:flex justify-center sm:justify-end sm:gap-1 md:gap-2 flex-wrap"
-        >
-          <NavItem label="Home" path="/" />
-          <NavItem label="About us" path="/about" />
-          <NavItem label="Courses" path="/courses" />
-          <div class="flex items-center gap-x-2">
-            <NavItem label="Updates" path="/updates" />
-            <NavItem label="Contact us" path="/contact-us" />
-          </div>
-        </ul>
-      </nav>
-    </header>
-    <div class="h-6 my-6 pl-44 w-screen">
-      <p>
-        <a
-          href="/"
-          class="rounded-full hover:bg-orange-600 hover:text-white px-2">HOME</a
-        >
-        <a class="rounded-full hover:bg-orange-600 hover:text-white px-2">
-          FACULTIES
-        </a>
-      </p>
-    </div>
-    <div class="flex max-w-4xl justify-center mx-auto">
-      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-        <li class="inline-block h-72 w-48">
-          <div class="flex flex-col items-center gap-2">
-            <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-            <p class="font-bold">Name Surname</p>
-            <p class="font-semibold">prof</p>
-            <button
-              class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-              >know more</button
-            >
-          </div>
-        </li>
-      </ul>
-    </div>
-    <footer class="bg-orange-400">
-      <div
-        class="flex-col sm:flex-row flex justify-evenly items-center gap-7 p-3"
-      >
-        <div class="flex flex-col items-center">
-          <img
-            class="h-[108px] w-[108px] shrink-0 object-cover object-top"
-            src="https://ssuconf1.vercel.app/SSULogo.png"
-            alt="Sri Sri University Logo"
-          />
-          <h3 class="text-black">SRI SRI UNIVERSITY</h3>
-        </div>
-        <ul class="flex flex-col text-center gap-0.5">
-          <li><a class="text-lg">CATEGORIES :-</a></li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >LINKS</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >EVENTS</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >GALLERY</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >CURRICULUM</a
-            >
-          </li>
-          <li>
-            <a
-              class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
-              >COLLABORATIONS</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div
-        class="text-lg flex flex-col items-center gap-2 my-5 sm:flex-row sm:justify-center"
-      >
-        <h4>CONTACT US AT:</h4>
-        <a href="" class="text-white font-semibold"
-          >fet@srisriuniversity.edu.in</a
-        >
-      </div>
-
-      <div class="w-screen bg-black h-0.5"></div>
-      <div
-        class="flex flex-col gap-2 justify-evenly items-center p-3 sm:p-5 sm:flex-row"
-      >
-        <h3 class="text-white px-3">Designed By- FET STUDENTS</h3>
-        <ul class="flex gap-4">
-          <li class="w-12 h-12 rounded-full bg-white/20"></li>
-          <li class="w-12 h-12 rounded-full bg-white/20"></li>
-          <li class="w-12 h-12 rounded-full bg-white/20"></li>
-          <li class="w-12 h-12 rounded-full bg-white/20"></li>
-        </ul>
-        <div
-          class="flex justify-between gap-x-4 sm:flex-row items-center w-full sm:w-max"
-        >
-          <h3
-            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
+<Default>
+  <h3 class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl">FACULTIES OF EMERGING TECHNOLOGY</h3>
+  <div class="flex max-w-4xl justify-center mx-auto flex-col items-center">
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <li class="inline-block h-72 w-48">
+        <div class="flex flex-col items-center gap-2">
+          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+          <p class="font-bold">Name Surname</p>
+          <p class="font-semibold">prof</p>
+          <button
+            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+            >know more</button
           >
-            TERMS AND CONDITION
-          </h3>
-          <h3
-            class="text-slate-300 px-3 whitespace-nowrap text-sm sm:text-base hover:bg-orange-600 hover:rounded-full hover:text-white"
-          >
-            PRIVACY POLICY
-          </h3>
         </div>
-      </div>
-    </footer>
-  </body>
-</html>
+      </li>
+      <li class="inline-block h-72 w-48">
+        <div class="flex flex-col items-center gap-2">
+          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+          <p class="font-bold">Name Surname</p>
+          <p class="font-semibold">prof</p>
+          <button
+            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+            >know more</button
+          >
+        </div>
+      </li>
+      <li class="inline-block h-72 w-48">
+        <div class="flex flex-col items-center gap-2">
+          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+          <p class="font-bold">Name Surname</p>
+          <p class="font-semibold">prof</p>
+          <button
+            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+            >know more</button
+          >
+        </div>
+      </li>
+      <li class="inline-block h-72 w-48">
+        <div class="flex flex-col items-center gap-2">
+          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
+          <p class="font-bold">Name Surname</p>
+          <p class="font-semibold">prof</p>
+          <button
+            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
+            >know more</button
+          >
+        </div>
+    </ul>
+    <div id="know more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
+      <button><a href="/faculties_main/">READ MORE ></a></button>
+    </div>
+  </div>
+</Default>

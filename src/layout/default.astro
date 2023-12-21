@@ -38,7 +38,7 @@ const navItems = [
     <title>Faculty Of Emerging Technologies</title>
   </head>
   <body class="bg-white min-h-screen w-full flex flex-col items-center">
-    <header class="max-w-screen-xl w-full flex items-center justify-between p-2 sm:p-3 md:p-3.5 lg:p-4">
+    <header class="w-full flex items-center justify-around p-2 sm:p-3 md:p-3.5 lg:p-4">
       <Logo />
       <nav class="">
         <SlideOver client:media="(max-width: 640px)" navItems={navItems.flat()} />
@@ -136,7 +136,7 @@ const navItems = [
       </nav>
     </header>
     <slot />
-    <footer class="bg-orange-400">
+    <footer class="bg-teal-600">
       <div
         class="flex flex-col sm:flex-row justify-evenly items-center gap-7 p-3 flex-wrap"
       >
@@ -149,7 +149,7 @@ const navItems = [
           </h2>
         </div>
         <ul class="flex flex-col text-center gap-1.5">
-          <li><a class="text-lg"> OUR FACULTIES :-</a></li>
+          <li><a class="text-lg"> CATEGORIES :-</a></li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
@@ -176,6 +176,7 @@ const navItems = [
           </li>
           <li>
             <a
+              href="/contents/"
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
               >> Faculty of Emerging Technologies</a
             >
@@ -192,6 +193,7 @@ const navItems = [
               >> Faculty of Management Studies</a
             >
           </li>
+          <li><a class="text-lg"> CATEGORIES :-</a></li>
           <li>
             <a
               class="px-3 hover:bg-orange-600 hover:rounded-full hover:text-white text-white font-semibold"
