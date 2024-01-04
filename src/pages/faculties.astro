@@ -1,61 +1,44 @@
 ---
 import "~/style.css";
-import Logo from "~/components/home/Logo.astro";
-import NavItem from "~/components/home/NavItem.astro";
-import Content from "~/pages/contents.astro";
+import { Image } from "astro:assets";
 import Default from "~/layout/default.astro";
+import facultiesData from "~/store/faculties";
 ---
 
 <Default>
-  <h3 class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl">FACULTIES OF EMERGING TECHNOLOGY</h3>
+  <h3
+    class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl"
+  >
+    FACULTIES OF EMERGING TECHNOLOGY
+  </h3>
   <div class="flex max-w-4xl justify-center mx-auto flex-col items-center">
     <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-      <li class="inline-block h-72 w-48">
-        <div class="flex flex-col items-center gap-2">
-          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-          <p class="font-bold">Name Surname</p>
-          <p class="font-semibold">prof</p>
-          <button
-            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-            >know more</button
-          >
-        </div>
-      </li>
-      <li class="inline-block h-72 w-48">
-        <div class="flex flex-col items-center gap-2">
-          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-          <p class="font-bold">Name Surname</p>
-          <p class="font-semibold">prof</p>
-          <button
-            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-            >know more</button
-          >
-        </div>
-      </li>
-      <li class="inline-block h-72 w-48">
-        <div class="flex flex-col items-center gap-2">
-          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-          <p class="font-bold">Name Surname</p>
-          <p class="font-semibold">prof</p>
-          <button
-            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-            >know more</button
-          >
-        </div>
-      </li>
-      <li class="inline-block h-72 w-48">
-        <div class="flex flex-col items-center gap-2">
-          <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" />
-          <p class="font-bold">Name Surname</p>
-          <p class="font-semibold">prof</p>
-          <button
-            class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white"
-            >know more</button
-          >
-        </div>
+      {
+        facultiesData.map((faculty) => {
+          return (
+            <li class="inline-block h-72 w-48">
+              <div class="flex flex-col items-center gap-2">
+                <Image
+                  src={faculty.image}
+                  alt="asd"
+                  class=" rounded-full aspect-square object-cover object-top border-2 border-orange-500"
+                />
+                <p class="font-bold">{faculty.name}</p>
+                <p class="font-semibold">{faculty.about}</p>
+                <button class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white">
+                  know more
+                </button>
+              </div>
+            </li>
+          );
+        })
+      }
+      <div
+        id="know more"
+        class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white"
+      >
+        <button><a href="/faculties_main/">READ MORE ></a></button>
+      </div>
     </ul>
-    <div id="know more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
-      <button><a href="/faculties_main/">READ MORE ></a></button>
-    </div>
   </div>
 </Default>
