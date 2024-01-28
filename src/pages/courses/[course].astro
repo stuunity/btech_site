@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths } from "astro";
+import Default from "~/layout/default.astro";
+import { courses } from "./data";
+
+export async function getStaticPaths(){
+    return courses.map(course => ({params: {course: course.id}, props: {courses: courses}}));
+}
+
+const { course } = Astro.params;
+//const { courses: coursesdata } = Astro.props;
+const filteredCourses = courses.find((Course) => Course.id===course);
+console.log(filteredCourses);
+---
+
+<Default>
+    
+    <div class="w-full items-center p-10">
+        <div class="flex justify-between">
+            <div class="text-slate-500 font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">Courses</div>
+            <button class="rounded-full text-sm sm:text-base font-medium bg-black h-6 sm:h-8 md:h-9 md:text-lg inline-flex items-center text-white px-2.5 sm:px-3 md:px-3.5 lg:px-5 hover:bg-slate-300 hover:text-black">Apply For Admission</button>
+          </ul>
+        </div>
+        <div>
+          <h1 class="font-medium py-2 text-4xl sm:text-5xl md:text-6xl lg:text-8xl lg:my-4">Btech. In CSE</h1>
+          <h3 class="text-slate-500 font-medium text-2xl sm:text-3xl md:text-4xl mb-4 lg:text-5xl">
+            {filteredCourses?.Specialization}
+          </h3>
+        </div>
+        <div>
+          <h2 class="font-semibold text-lg sm:text-xl md:text-2xl lg:text-4xl py-2">Introduction</h2>
+            <ul class="p-4 text-sm sm:text-base md:text-lg lg:text-xl gap-y-2 font-medium flex flex-col">
+              {filteredCourses?.highlights.map((highlight) => {
+                return(
+                    <li class="list-disc">
+                        {highlight}
+                    </li>
+                )
+              })}
+            </ul>
+          </div>
+      </div>
+</Default>
