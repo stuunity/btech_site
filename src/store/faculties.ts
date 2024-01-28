@@ -3,13 +3,15 @@ import DrChinmayaKumarNayak from "~/assets/profile-pic/Dr-Chinmaya-Kumar-Nayak-P
 
 export default [
     {
-        name: 'Dr. Sudhir',
-        about: 'XYZ',
-        image: SudhirProfilePic
+        name: 'Dr.Sudhir Mohapatra',
+        about: 'Professor',
+        image: SudhirProfilePic,
+        description:'add links'
     },
     {
-        name: 'Dr. Chinmay Kumar',
-        about: 'ZZZ',
-        image: DrChinmayaKumarNayak
+        name: 'Dr.Chinmay Kumar Nayak',
+        about: 'Professor',
+        image: DrChinmayaKumarNayak,
+        description:'add links'
     }
 ]

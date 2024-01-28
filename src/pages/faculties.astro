@@ -4,41 +4,71 @@ import { Image } from "astro:assets";
 import Default from "~/layout/default.astro";
 import facultiesData from "~/store/faculties";
 ---
+<style>
+  .flip-card {
+    position: relative;
+    perspective: 1000px;
+  }
+
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  /* Ensure front and back faces are stacked on top of each other */
+  .flip-card-front {
+    z-index: 2;
+  }
+
+  .flip-card-back {
+    z-index: 1;
+    transform: rotateY(180deg); /* Initially hidden by rotating 180 degrees */
+  }
+</style>
 
 <Default>
-  <h3
-    class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl"
-  >
-    FACULTIES OF EMERGING TECHNOLOGY
+  <h3 class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl">
+    FACULTIES OF ENGINEERING TECHNOLOGY
   </h3>
-  <div class="flex max-w-4xl justify-center mx-auto flex-col items-center">
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-      {
-        facultiesData.map((faculty) => {
-          return (
-            <li class="inline-block h-72 w-48">
-              <div class="flex flex-col items-center gap-2">
-                <Image
-                  src={faculty.image}
-                  alt="asd"
-                  class=" rounded-full aspect-square object-cover object-top border-2 border-orange-500"
-                />
-                <p class="font-bold">{faculty.name}</p>
-                <p class="font-semibold">{faculty.about}</p>
-                <button class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white">
-                  know more
-                </button>
-              </div>
-            </li>
-          );
-        })
-      }
-      <div
-        id="know more"
-        class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white"
-      >
-        <button><a href="/faculties_main/">READ MORE ></a></button>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    {facultiesData.map((faculty) => (
+    <div key={faculty.id} class="inline-block h-72 w-48 flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <Image
+            src={faculty.image}
+            alt="asd"
+            class="rounded-full aspect-square object-cover object-top border-2 border-orange-500"
+          />
+          <p class="font-bold">{faculty.name}</p>
+          <p class="font-semibold">{faculty.about}</p>
+        </div>
+        <div class="flip-card-back">
+          <p>{faculty.description}</p>
+        </div>
       </div>
-    </ul>
+    </div>
+    ))}
+  </div>
+
+  <div id="know more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
+    <button><a href="/faculties_main/">READ MORE ></a></button>
   </div>
 </Default>
+
