@@ -6,16 +6,11 @@ import facultiesData from "~/store/faculties";
 ---
 <style>
   .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px; 
-    juatify-content: center;
+    position: relative;
+    perspective: 1000px;
   }
 
-  /* This container is needed to position the front and back side */
   .flip-card-inner {
-    position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -23,101 +18,57 @@ import facultiesData from "~/store/faculties";
     transform-style: preserve-3d;
   }
 
-  /* Do a horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
 
-  /* Position the front and back side */
   .flip-card-front,
   .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
 
-  /* Style the front side (fallback if the image is missing) */
+  /* Ensure front and back faces are stacked on top of each other */
   .flip-card-front {
-    color: black;
+    z-index: 2;
   }
 
-  /* Style the back side */
-  .flip-card-back {;
-    color: black;
-    transform: rotateY(180deg);
+  .flip-card-back {
+    z-index: 1;
+    transform: rotateY(180deg); /* Initially hidden by rotating 180 degrees */
   }
 </style>
 
 <Default>
-  <h3
-    class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl"
-  >
+  <h3 class="flex justify-center p-5 m-5 mb-10 bg-orange-400 w-full font-semibold text-2xl">
     FACULTIES OF ENGINEERING TECHNOLOGY
   </h3>
-  <div class="flex max-w-4xl justify-center flex-col items-center">
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-      <li class="inline-block h-72">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flex flex-col items-center gap-2">
-              <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" alt="Profile Image" />
-              <p class="font-bold">Name Surname</p>
-              <p class="font-semibold">prof</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Information</p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="inline-block h-72">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front flex flex-col items-center gap-2">
-              <img class="rounded-full border-2 border-orange-500 h-40 w-40" src="#" alt="Profile Image" />
-              <p class="font-bold">Name Surname</p>
-              <p class="font-semibold">prof</p>
-            </div>
-            <div class="flip-card-back">
-              <p>Information</p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <!-- Repeat the above list item structure for other faculty members as needed -->
 
-    </ul>
-    <div id="know-more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
-      <button><a href="/faculties_main/">READ MORE ></a></button>
-    </div>
-      {
-        facultiesData.map((faculty) => {
-          return (
-            <li class="inline-block h-72 w-48">
-              <div class="flex flex-col items-center gap-2">
-                <Image
-                  src={faculty.image}
-                  alt="asd"
-                  class=" rounded-full aspect-square object-cover object-top border-2 border-orange-500"
-                />
-                <p class="font-bold">{faculty.name}</p>
-                <p class="font-semibold">{faculty.about}</p>
-                <button class="rounded-full border-2 border-slate-300 px-2 pb-1 hover:bg-orange-600 hover:text-white">
-                  know more
-                </button>
-              </div>
-            </li>
-          );
-        })
-      }
-      <div
-        id="know more"
-        class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white"
-      >
-        <button><a href="/faculties_main/">READ MORE ></a></button>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    {facultiesData.map((faculty) => (
+    <div key={faculty.id} class="inline-block h-72 w-48 flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <Image
+            src={faculty.image}
+            alt="asd"
+            class="rounded-full aspect-square object-cover object-top border-2 border-orange-500"
+          />
+          <p class="font-bold">{faculty.name}</p>
+          <p class="font-semibold">{faculty.about}</p>
+        </div>
+        <div class="flip-card-back">
+          <p>{faculty.description}</p>
+        </div>
       </div>
-    </ul>
+    </div>
+    ))}
+  </div>
+
+  <div id="know more" class="px-4 m-20 rounded-lg border-2 border-slate-300 pb-1 hover:bg-orange-600 hover:text-white">
+    <button><a href="/faculties_main/">READ MORE ></a></button>
   </div>
 </Default>
+
